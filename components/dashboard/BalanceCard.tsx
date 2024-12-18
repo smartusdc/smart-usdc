@@ -14,6 +14,7 @@ export const BalanceCard = () => {
   const [isClaimingRewards, setIsClaimingRewards] = useState(false)
 
   const handleClaimRewards = async () => {
+    // @ts-ignore
     if (!address || !window.ethereum) return
     setIsClaimingRewards(true)
 
