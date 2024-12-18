@@ -14,6 +14,7 @@ export interface ISmartUSDC {
   getAPR(): Promise<ethers.BigNumber>
   generateReferralCode(): Promise<string>
   validateReferralCode(code: string): Promise<boolean>
+  claimReward(): Promise<ethers.ContractTransaction>
 }
 
 export class USDC__factory {
@@ -36,6 +37,7 @@ export class SmartUSDC__factory {
       getAPR: async () => ethers.utils.parseEther('0'),
       generateReferralCode: async () => '',
       validateReferralCode: async (code: string) => true,
+      claimReward: async () => ({} as ethers.ContractTransaction),
     }
   }
 }
